@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -98,6 +99,72 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl;
+  }
+  
+  .glass-dark {
+    @apply backdrop-blur-lg bg-funda-navy/20 border border-white/10 rounded-2xl;
+  }
+
+  .btn-primary {
+    @apply bg-funda-orange text-white px-8 py-4 rounded-full font-inter font-semibold text-fluid-base transition-all duration-300 hover:bg-funda-orange/90 hover:shadow-lg hover:scale-105;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-white text-white px-8 py-4 rounded-full font-inter font-semibold text-fluid-base transition-all duration-300 hover:bg-white hover:text-funda-navy hover:scale-105;
+  }
+
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 py-16 lg:py-24;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .heading-primary {
+    @apply font-playfair font-bold text-fluid-4xl text-funda-navy;
+  }
+
+  .heading-secondary {
+    @apply font-playfair font-semibold text-fluid-3xl text-funda-navy;
+  }
+
+  .text-highlight {
+    @apply text-funda-orange font-semibold;
+  }
+
+  .parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .typing-effect {
+    overflow: hidden;
+    border-right: 3px solid #F98B88;
+    white-space: nowrap;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #F98B88 }
   }
 }
