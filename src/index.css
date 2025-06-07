@@ -153,3 +153,9 @@
     50% { border-color: #60A5FA }
   }
 }
+
+/* Hide Lovable watermark */
+.lovable-watermark,
+a[href*="lovable.app"] {
+  display: none !important;
+}
