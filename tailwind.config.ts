@@ -63,11 +63,11 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// FUNDA Brand Colors
-				'funda-navy': '#0D1B2A',
-				'funda-orange': '#F98B88',
-				'funda-sandstone': '#F5E9DA',
-				'funda-charcoal': '#333333',
+				// FUNDA Brand Colors (All Blues)
+				'funda-deep-navy': '#0A1F44',
+				'funda-royal-blue': '#1E3A8A',
+				'funda-sky-blue': '#60A5FA',
+				'funda-pale-blue': '#E0F2FE',
 			},
 			fontFamily: {
 				'playfair': ['Playfair Display', 'serif'],
@@ -127,10 +127,10 @@ export default {
 				},
 				'glow': {
 					'0%, 100%': {
-						boxShadow: '0 0 20px rgba(249, 139, 136, 0.3)'
+						boxShadow: '0 0 20px rgba(96, 165, 250, 0.3)'
 					},
 					'50%': {
-						boxShadow: '0 0 30px rgba(249, 139, 136, 0.6)'
+						boxShadow: '0 0 30px rgba(96, 165, 250, 0.6)'
 					}
 				}
 			},
