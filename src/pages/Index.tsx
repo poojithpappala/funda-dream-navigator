@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, Calendar, MapPin, Users, Star, Phone, Mail, Instagram, Youtube, Facebook, Sparkles, Zap, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -140,21 +139,21 @@ const Index = () => {
         />
       </div>
 
-      {/* Minimalistic Navigation */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isNavVisible ? 'nav-minimal' : 'bg-transparent'}`}>
+      {/* Professional Sticky Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 backdrop-blur-xl bg-white/95 border-b border-blue-100/50 shadow-lg">
         <div className="container-minimal px-6 sm:px-8">
           <div className="flex items-center justify-between h-20">
-            {/* Logo */}
+            {/* Enhanced Logo */}
             <div className="relative">
-              <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-3 rounded-xl shadow-blue">
-                <div className="font-bold text-xl text-white">
+              <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-3 rounded-xl shadow-blue transform transition-transform duration-300 hover:scale-105">
+                <div className="font-bold text-xl text-white tracking-wide">
                   FUNDA
                 </div>
               </div>
             </div>
             
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-2">
+            {/* Desktop Navigation with Enhanced Styling */}
+            <div className="hidden lg:flex items-center space-x-1">
               {[
                 { name: 'HOME', id: 'home' },
                 { name: 'ABOUT', id: 'about' },
@@ -165,29 +164,45 @@ const Index = () => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`nav-item ${activeSection === item.id ? 'active' : ''}`}
+                  className={`relative px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 ease-out transform hover:scale-105 ${
+                    activeSection === item.id 
+                      ? 'text-blue-600 bg-blue-50 shadow-blue/20 shadow-lg' 
+                      : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50/70'
+                  }`}
                 >
                   {item.name}
+                  {activeSection === item.id && (
+                    <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-6 h-1 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"></div>
+                  )}
                 </button>
               ))}
               
-              {/* Register Button */}
-              <div className="ml-6">
+              {/* Enhanced Register Button */}
+              <div className="ml-8">
                 <button 
                   onClick={() => scrollToSection('register')}
-                  className="btn-3d-primary"
+                  className="btn-3d-primary px-6 py-3 text-sm font-semibold"
                 >
                   <Sparkles className="w-4 h-4 mr-2" />
                   Register Now
                 </button>
               </div>
             </div>
+
+            {/* Mobile Menu Button */}
+            <div className="lg:hidden">
+              <button className="p-2 rounded-lg text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section id="home" className="relative h-screen flex items-center justify-center gradient-bg">
+      {/* Hero Section with Top Padding for Sticky Nav */}
+      <section id="home" className="relative h-screen flex items-center justify-center gradient-bg pt-20">
         <div 
           className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-transparent to-blue-800/10"
           style={{
@@ -235,8 +250,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* About FUNDA */}
-      <section id="about" className="section-padding bg-white relative">
+      {/* About FUNDA with Top Padding */}
+      <section id="about" className="section-padding bg-white relative pt-32">
         <div className="container-minimal relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="fade-in-left">
@@ -274,8 +289,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Event Details */}
-      <section id="event" className="section-padding gradient-bg-blue relative">
+      {/* Event Details with Top Padding */}
+      <section id="event" className="section-padding gradient-bg-blue relative pt-32">
         <div className="container-minimal relative z-10">
           <h2 className="heading-minimal text-4xl lg:text-6xl text-center mb-16 text-gradient-blue fade-in-up">
             Event Details
@@ -332,8 +347,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Pricing Plans */}
-      <section id="plans" className="section-padding bg-white relative">
+      {/* Pricing Plans with Top Padding */}
+      <section id="plans" className="section-padding bg-white relative pt-32">
         <div className="container-minimal relative z-10">
           <h2 className="heading-minimal text-4xl lg:text-6xl text-center mb-6 text-gradient-blue fade-in-up">Choose Your FUNDA Pass</h2>
           <p className="text-center text-gray-600 text-xl mb-16 fade-in-up" style={{ animationDelay: '0.2s' }}>Select the perfect plan for your family</p>
@@ -396,8 +411,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Registration */}
-      <section id="register" className="section-padding gradient-bg-blue relative">
+      {/* Registration with Top Padding */}
+      <section id="register" className="section-padding gradient-bg-blue relative pt-32">
         <div className="container-minimal relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="heading-minimal text-4xl lg:text-6xl text-gradient-blue mb-12 fade-in-up">
@@ -424,8 +439,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Contact */}
-      <section id="contact" className="section-padding bg-white relative">
+      {/* Contact with Top Padding */}
+      <section id="contact" className="section-padding bg-white relative pt-32">
         <div className="container-minimal relative z-10">
           <h2 className="heading-minimal text-4xl lg:text-6xl text-center mb-16 text-gradient-blue fade-in-up">Contact Us</h2>
           
